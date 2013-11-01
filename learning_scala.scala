@@ -22,3 +22,5 @@ object Main {
       }))
    }
 }
+
+// http://ideone.com/WhkGmj

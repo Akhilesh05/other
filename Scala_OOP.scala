@@ -5,17 +5,11 @@ class QuadraticEqt(aa:Double=0, bb:Double=0, cc:Double=0){
 	var b:Double = bb
 	var c:Double = cc
 	
-	def yIntercept():Double = {
-		c
-	}
+	def yIntercept():Double = c
 	
-	def gradAt(x:Double):Double = {
-		2*a*x + b
-	}
+	def gradAt(x:Double):Double = 2*a*x + b
 	
-	def normalAt(x:Double):Double = {
-		-1 / gradAt(x)
-	}
+	def normalAt(x:Double):Double = -1 / gradAt(x)
 	
 	def solve():List[Double] = {
 		var x1 = (-b+ sqrt(pow(b,2) - 4*a*c))/(2*a)
@@ -40,6 +34,7 @@ object Main {
    	    println(y)
    	    println(x.gradAt(3))
    	    println(x.normalAt(3))
+   	    println(x.yIntercept)
    }
    
 }

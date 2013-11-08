@@ -17,10 +17,10 @@ object Main {
 
    def main(args: Array[String]) {
    	    var x:Quadratic = new Quadratic(3,13,6)
-        var y:List[Double] = (new Quadratic(2,8,4)).solve()
-        println(y)
-        println(x.a)
-        println(x.solve)
+   	    var y:List[Double] = (new Quadratic(2,8,4)).solve()
+   	    println(y)
+   	    println(x.a)
+   	    println(x.solve)
    }
    
 }

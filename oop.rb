@@ -1,3 +1,15 @@
+class Point
+	def initialize(x, y)
+		@x, @y = x, y
+	end
+	def get_x
+		@x
+	end
+	def get_y
+		@y
+	end
+end
+
 class QuadraticEqt
 	
 	@@count = 0
@@ -35,6 +47,12 @@ class QuadraticEqt
 		x1 = (-@b+Math::sqrt(@b**2 - 4*@a*@c))/(2*@a)
 		x2 = (-@b-Math::sqrt(@b**2 - 4*@a*@c))/(2*@a)
 		Array[x1, x2]
+	end
+	
+	def stationary
+		x = -b/(2*@a)
+		y = b**2/(4*a) + c
+		Point.new(x, y)
 	end
 	
 	def gradAt x

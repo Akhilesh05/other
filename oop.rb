@@ -1,10 +1,10 @@
 class QuadraticEqt
 	
+	@@count = 0
 	
 	def initialize(a, b, c)
-		@a = a.to_f
-		@b = b.to_f
-		@c = c.to_f
+		@a, @b, @c = a.to_f, b.to_f, c.to_f
+		@@count += 1
 	end
 	
 	def solve

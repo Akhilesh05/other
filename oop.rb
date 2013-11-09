@@ -39,7 +39,7 @@ class QuadraticEqt
 		@b = b
 	end
 	
-	def set_c
+	def set_c=(c)
 		@c = c
 	end
 	
@@ -50,8 +50,8 @@ class QuadraticEqt
 	end
 	
 	def stationary
-		x = -b/(2*@a)
-		y = b**2/(4*a) + c
+		x = -@b/(2*@a)
+		y = @b**2/(4*@a) + @c
 		Point.new(x, y)
 	end
 	
@@ -68,3 +68,4 @@ end
 fx = QuadraticEqt.new 2, 8, 6
 
 puts fx.solve
+puts fx.normalAt(fx.stationary.get_x)

@@ -68,4 +68,4 @@ end
 fx = QuadraticEqt.new 2, 8, 6
 
 puts fx.solve
-puts fx.normalAt(fx.stationary.get_x)
+puts fx.normalAt fx.stationary.get_x

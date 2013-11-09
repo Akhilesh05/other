@@ -1,4 +1,6 @@
 class QuadraticEqt
+	
+	
 	def initialize(a, b, c)
 		@a = a.to_f
 		@b = b.to_f
@@ -18,7 +20,6 @@ class QuadraticEqt
 	def normalAt x
 		-1 / gradAt(x)
 	end
-	
 	
 end
 

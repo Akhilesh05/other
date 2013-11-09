@@ -1,5 +1,8 @@
 import scala.math._
+
+
 case class Point(x:Double, y:Double)
+
 class QuadraticEqt(aa:Double=0, bb:Double=0, cc:Double=0){
 	var a:Double = aa
 	var b:Double = bb

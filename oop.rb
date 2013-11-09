@@ -2,9 +2,33 @@ class QuadraticEqt
 	
 	@@count = 0
 	
-	def initialize(a, b, c)
+	def initialize(a=0, b=0, c=0)
 		@a, @b, @c = a.to_f, b.to_f, c.to_f
 		@@count += 1
+	end
+	
+	def get_a
+		@a
+	end
+	
+	def get_b
+		@b
+	end
+	
+	def get_c
+		@c
+	end
+	
+	def set_a=(a)
+		@a = a
+	end
+	
+	def set_b=(b)
+		@b = b
+	end
+	
+	def set_c
+		@c = c
 	end
 	
 	def solve

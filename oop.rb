@@ -8,6 +8,9 @@ class Point
 	def get_y
 		@y
 	end
+	def to_s
+		"Pt(#@x, #@y)"
+	end
 end
 
 class QuadraticEqt
@@ -69,3 +72,11 @@ fx = QuadraticEqt.new 2, 8, 6
 
 puts fx.solve
 puts fx.normalAt fx.stationary.get_x
+
+y = QuadraticEqt.new
+y.set_a = 3
+y.set_b = 15
+y.set_c = 10
+
+puts y.solve
+puts y.stationary

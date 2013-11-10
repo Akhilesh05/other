@@ -1,7 +1,13 @@
 import scala.math._
 
 
-case class Point(x:Double, y:Double)
+//case class Point(var x:Double, var y:Double)
+
+case class Point(var x:Double, var y:Double) {
+	
+	override def toString():String = s"Pt(${x}, ${y})"
+	
+}
 
 class QuadraticEqt(var a:Double=0, var b:Double=0, var c:Double=0){
 	

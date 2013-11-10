@@ -3,10 +3,9 @@ import scala.math._
 
 case class Point(x:Double, y:Double)
 
-class QuadraticEqt(aa:Double=0, bb:Double=0, cc:Double=0){
-	var a:Double = aa
-	var b:Double = bb
-	var c:Double = cc
+class QuadraticEqt(var a:Double=0, var b:Double=0, var c:Double=0){
+	
+	override def toString():String = s"${a}x^2 + ${b}x + ${c}"
 	
 	def yIntercept():Double = c
 	
@@ -26,6 +25,10 @@ class QuadraticEqt(aa:Double=0, bb:Double=0, cc:Double=0){
 		Point(x, y)
 	}
 	
+}
+
+object QuadraticEqt {
+	def echo : String = "echo"
 }
 
 object Main {
@@ -49,6 +52,9 @@ object Main {
    	    println(fx.stationary)
    	    println(fx.normalAt(fx.stationary.x)) // normal at stationary is always infinity
    	    println(fx.gradAt(fx.stationary.x))   // grad at stationary is always zero
+   	    
+   	    var y = QuadraticEqt.echo    // this calls the def echo of object QuadraticEqt
+   	    println(y)
    }
    
 }

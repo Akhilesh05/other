@@ -53,14 +53,16 @@ object Main {
    	    fx.b = 8
    	    fx.c = 6
    	    println(fx)
-   	    println(fx.solve)
-   	    println(fx.gradAt(5))
+   	    println( fx solve )    //same as fx.solve
+   	    val grad:Double = fx gradAt 5  //same as fx.gradAt(5)
+   	    println(grad)
    	    println(fx.stationary)
    	    println(fx.normalAt(fx.stationary.x)) // normal at stationary is always infinity
    	    println(fx.gradAt(fx.stationary.x))   // grad at stationary is always zero
    	    
    	    var y = QuadraticEqt.echo    // this calls the def echo of object QuadraticEqt
    	    println(y)
+   	    
    }
    
 }

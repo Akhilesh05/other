@@ -1,3 +1,4 @@
+//http://ideone.com/EyaDef
 import scala.math._
 
 
@@ -41,8 +42,8 @@ object Main {
 
    def main(args: Array[String]) {
    	    var x:QuadraticEqt = new QuadraticEqt(3,13,6)
-   	    println(x.gradAt(x.stationary().x))  //equals zero everytime
-   	    var z = (new QuadraticEqt(2,4,6)).stationary
+   	    println(x.gradAt(x stationary() x))  //equals zero everytime
+   	    var z = ( new QuadraticEqt( 2,4,6 ) ).stationary
    	    println(z)
    	    println(x.gradAt(3))
    	    println(x.normalAt(3))

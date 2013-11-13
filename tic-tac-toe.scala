@@ -97,13 +97,12 @@ object Grid
 
 	def checkWin(p1:Player, p2:Player) {
 
-		if(a == b && a == c){
+		if(a == b && a == c && a != null){
 			a match {
 				case "o" => Game.winner(p1)
 				case "x" => Game.winner(p2)
-				case _ => false
 			}
-		}else if(d == e && d == f){
+		}else if(d == e && d == f && d != null){
 			d match {
 				case "o" => {
 								p1.win()
@@ -113,9 +112,8 @@ object Grid
 								p2.win()
 								Game.win = true
 							}
-				case _ => false
 			}
-		}else if(g == h && g == i){
+		}else if(g == h && g == i && g != null){
 			g match {
 				case "o" => {
 								p1.win()
@@ -124,10 +122,9 @@ object Grid
 				case "x" => {
 								p2.win()
 								Game.win = true
-							}
-				case _ => false
+							} 
 			}
-		}else if(a == d && a == g){
+		}else if(a == d && a == g && a != null){
 			a match {
 				case "o" => {
 								p1.win()
@@ -137,9 +134,8 @@ object Grid
 								p2.win()
 								Game.win = true
 							}
-				case _ => false
 			}
-		}else if(b == e && b == h){
+		}else if(b == e && b == h && b != null){
 			b match {
 				case "o" => {
 								p1.win()
@@ -149,9 +145,8 @@ object Grid
 								p2.win()
 								Game.win = true
 							}
-				case _ => false
 			}
-		}else if(c == f && c == i){
+		}else if(c == f && c == i && c != null){
 			c match {
 				case "o" => {
 								p1.win()
@@ -161,9 +156,8 @@ object Grid
 								p2.win()
 								Game.win = true
 							}
-				case _ => false
 			}
-		}else if(a == e && a == i){
+		}else if(a == e && a == i && a != null){
 			a match {
 				case "o" => {
 								p1.win()
@@ -173,9 +167,8 @@ object Grid
 								p2.win()
 								Game.win = true
 							}
-				case _ => false
 			}
-		}else if(c == e && c == g){
+		}else if(c == e && c == g && c != null){
 			c match {
 				case "o" => {
 								p1.win()
@@ -185,7 +178,6 @@ object Grid
 								p2.win()
 								Game.win = true
 							}
-				case _ => false
 			}
 		}
 		
@@ -216,7 +208,7 @@ object Game
 	}
 }
 
-object Lesson4 {
+object Main {
 	def main(args: Array[String]){
 		// ----- Players input their names -----
 		var p1:Player = new Player(name=readLine("P1 name: "))

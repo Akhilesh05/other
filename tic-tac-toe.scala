@@ -104,80 +104,38 @@ object Grid
 			}
 		}else if(d == e && d == f && d != null){
 			d match {
-				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
-							}
+                                case "o" => Game.winner(p1)
+                                case "x" => Game.winner(p2)
 			}
 		}else if(g == h && g == i && g != null){
 			g match {
-				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
-							}
+                                case "o" => Game.winner(p1)
+                                case "x" => Game.winner(p2)
 			}
 		}else if(a == d && a == g && a != null){
 			a match {
-				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
-							}
+                                case "o" => Game.winner(p1)
+                                case "x" => Game.winner(p2)
 			}
 		}else if(b == e && b == h && b != null){
 			b match {
-				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
-							}
+                                case "o" => Game.winner(p1)
+                                case "x" => Game.winner(p2)
 			}
 		}else if(c == f && c == i && c != null){
 			c match {
-				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
-							}
+                                case "o" => Game.winner(p1)
+                                case "x" => Game.winner(p2)
 			}
 		}else if(a == e && a == i && a != null){
 			a match {
-				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
-							}
+                                case "o" => Game.winner(p1)
+                                case "x" => Game.winner(p2)
 			}
 		}else if(c == e && c == g && c != null){
 			c match {
-				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
-							}
+                                case "o" => Game.winner(p1)
+                                case "x" => Game.winner(p2)
 			}
 		}
 		

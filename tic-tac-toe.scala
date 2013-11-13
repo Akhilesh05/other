@@ -99,14 +99,8 @@ object Grid
 
 		if(a == b && a == c){
 			a match {
-				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
-							}
+				case "o" => Game.winner(p1)
+				case "x" => Game.winner(p2)
 				case _ => false
 			}
 		}else if(d == e && d == f){
@@ -216,7 +210,10 @@ object Game
 		player1 = p1
 		player2 = p2
 	}
-
+	def winner(player:Player){
+		win = true
+		player.win
+	}
 	def toogleTurn(p1:Player, p2:Player) {
 		if (turn == p1){
 			turn = p2

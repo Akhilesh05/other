@@ -112,13 +112,6 @@ object Grid
 				case "x" => {
 								p2.win()
 								Game.win = true
-							}				case "o" => {
-								p1.win()
-								Game.win = true
-							}
-				case "x" => {
-								p2.win()
-								Game.win = true
 							}
 				case _ => false
 			}

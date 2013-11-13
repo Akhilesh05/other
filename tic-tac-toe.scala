@@ -242,7 +242,6 @@ object Lesson4 {
 			var x:Boolean = false
 			while(!Game.turn.play){
 				println("Invalid")
-				x = Game.turn.play
 			}
 			Grid.checkWin(p1, p2)
 			Game.toogleTurn(p1, p2)

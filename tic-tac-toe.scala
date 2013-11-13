@@ -122,7 +122,7 @@ object Grid
 				case "x" => {
 								p2.win()
 								Game.win = true
-							} 
+							}
 			}
 		}else if(a == d && a == g && a != null){
 			a match {

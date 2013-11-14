@@ -37,8 +37,17 @@ object Grid
 	private var h:String = null
 	private var i:String = null
 	
-	def update = {
-		" " + (if(a == "o") "o" else if(a == "x") "x" else " ") + " |"
+	def update():String = {
+		" " + (if(a == "o") "o" else if(a == "x") "x" else " ") + " |" +
+		" " + (if(b == "o") "o" else if(b == "x") "x" else " ") + " |" +
+		" " + (if(c == "o") "o" else if(c == "x") "x" else " ") + " \n"+
+		" " + (if(d == "o") "o" else if(d == "x") "x" else " ") + " |" +
+		" " + (if(e == "o") "o" else if(e == "x") "x" else " ") + " |" +
+		" " + (if(f == "o") "o" else if(f == "x") "x" else " ") + " \n"+
+		" " + (if(g == "o") "o" else if(g == "x") "x" else " ") + " |" +
+		" " + (if(h == "o") "o" else if(h == "x") "x" else " ") + " |" +
+		" " + (if(i == "o") "o" else if(i == "x") "x" else " ") + " \n"
+		
 	}
 	
 	def checkAndPlace(p:Player, x:String):Boolean = {

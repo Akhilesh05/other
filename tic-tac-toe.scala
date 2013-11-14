@@ -196,7 +196,6 @@ object Main {
 
 		// ----- Gameplay -----
 		while(!Game.win){
-			var x:Boolean = false
 			while(!Game.turn.play){
 				println("Invalid")
 			}

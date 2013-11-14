@@ -36,6 +36,11 @@ object Grid
 	private var g:String = null
 	private var h:String = null
 	private var i:String = null
+	
+	def update = {
+		" " + (if(a == "o") "o" else if(a == "x") "x" else " ") + " |"
+	}
+	
 	def checkAndPlace(p:Player, x:String):Boolean = {
 		x match{
 			case "a" => if(a==null){
@@ -92,6 +97,7 @@ object Grid
 						}else{
 							false
 						}
+			case _ => false
 		}
 	}
 

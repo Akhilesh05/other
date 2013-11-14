@@ -170,6 +170,7 @@ object Game
 	def init(p1:Player, p2:Player) = {
 		player1 = p1
 		player2 = p2
+		turn = p1
 	}
 	def winner(player:Player){
 		win = true
@@ -194,8 +195,6 @@ object Main {
 		println(Grid.init(p1, p2))
 
 		// ----- Gameplay -----
-		Game.win = false
-		Game.turn = p1
 		while(!Game.win){
 			var x:Boolean = false
 			while(!Game.turn.play){

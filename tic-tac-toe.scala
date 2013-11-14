@@ -20,7 +20,7 @@ case class Player(
 object Grid
 {
 	private val sep:String = "-----------"
-	val grid:String = s" A | B | C \n${sep}\n D | E | F \n${sep}\n G | H | I "
+	val grid:String = s" a | b | c \n${sep}\n d | e | f \n${sep}\n g | h | i "
 
 	def init(p1:Player, p2:Player):String = {
 		Game.init(p1, p2)
@@ -38,12 +38,15 @@ object Grid
 	private var i:String = null
 	
 	def update():String = {
+		"\n"+
 		" " + (if(a == "o") "o" else if(a == "x") "x" else " ") + " |" +
 		" " + (if(b == "o") "o" else if(b == "x") "x" else " ") + " |" +
 		" " + (if(c == "o") "o" else if(c == "x") "x" else " ") + " \n"+
+		sep + "\n" +
 		" " + (if(d == "o") "o" else if(d == "x") "x" else " ") + " |" +
 		" " + (if(e == "o") "o" else if(e == "x") "x" else " ") + " |" +
 		" " + (if(f == "o") "o" else if(f == "x") "x" else " ") + " \n"+
+		sep + "\n" +
 		" " + (if(g == "o") "o" else if(g == "x") "x" else " ") + " |" +
 		" " + (if(h == "o") "o" else if(h == "x") "x" else " ") + " |" +
 		" " + (if(i == "o") "o" else if(i == "x") "x" else " ") + " \n"
@@ -110,7 +113,7 @@ object Grid
 		}
 	}
 
-	def checkWin(p1:Player, p2:Player) {
+	def checkWin(p1:Player=Game.player1, p2:Player=Game.player2) {
 
 		if(a == b && a == c && a != null){
 			a match {
@@ -172,11 +175,11 @@ object Game
 		win = true
 		player.win
 	}
-	def toogleTurn(p1:Player, p2:Player) {
-		if (turn == p1){
-			turn = p2
+	def toogleTurn() {
+		if (turn == player1){
+			turn = player2
 		}else{
-			turn = p1
+			turn = player1
 		}
 	}
 }
@@ -198,8 +201,9 @@ object Main {
 			while(!Game.turn.play){
 				println("Invalid")
 			}
-			Grid.checkWin(p1, p2)
-			Game.toogleTurn(p1, p2)
+			println(Grid.update)
+			Grid.checkWin()
+			Game.toogleTurn
 		}
 	}
 }

@@ -11,10 +11,10 @@ case class Player(
 		Grid.checkAndPlace(this, x)
 	}
 	def win() = {
-		println(s"${name} won !!!! Contrats !! :*")
+		println(s"$name won !!!! Contrats !! :*")
 	}
 	def lose() = {
-		
+		println(s"Feelin' sorry for $name")
 	}
 }
 object Grid
@@ -176,6 +176,7 @@ object Game
 	def winner(player:Player){
 		win = true
 		player.win
+		if(player == player1) player2.lose else player1.lose
 	}
 	def toogleTurn() {
 		if (turn == player1){

@@ -10,10 +10,17 @@ case class Player(
 		var x:String = readLine(s"${name}!! Where to play ${ox}: ")
 		Grid.checkAndPlace(this, x)
 	}
-	def win() = {
-		println(s"$name won !!!! Contrats !! :*")
+	def win() {
+		score += 1
+		println(s"$name won the duel !!")
 	}
-	def lose() = {
+	def lose() {
+		println(s"$name !! Concentrate kiddo... :p")
+	}
+	def winGame() {
+		println(s"$name won the Game !! Congrats...")
+	}
+	def loseGame() {
 		println(s"Feelin' sorry for $name")
 	}
 }
@@ -163,15 +170,32 @@ object Grid
 object Game
 {
 	var win:Boolean = false
+	var numDuel:Int = 0
 
 	var turn:Player = Player()
 	var player1:Player = Player()
 	var player2:Player = Player()
 
-	def init(p1:Player, p2:Player) = {
+	def init(p1:Player, p2:Player) {
 		player1 = p1
 		player2 = p2
 		turn = p1
+		win = false
+		println("1: Lone Ranger(1 duel)\n2: Triple H(3 duels)\n3: 1 Bol 5(5 duel)\n4: Besharam(7 duels)\n")
+		var type_ = readLine("Enter game type(1, 2, 3, or 4): ")
+		numDuel = type_ match {
+			case 1 => 1
+			case 2 => 3
+			case 3 => 5
+			case 4 => 7
+			case _ => 1
+		}
+	}
+	def finish(){
+		if(player1.score > player2.score)
+			player1.winGame
+		else
+			player2.winGame
 	}
 	def winner(player:Player){
 		win = true
@@ -194,6 +218,7 @@ object Main {
 		var p2:Player = new Player(name=readLine("P2 name: "))
 
 		// ----- Initiates the match
+		for(1 to Game.numDuel){
 		println(Grid.init(p1, p2))
 
 		// ----- Gameplay -----
@@ -205,5 +230,7 @@ object Main {
 			Grid.checkWin()
 			Game.toogleTurn
 		}
+		}
+		Game.finish
 	}
 }
